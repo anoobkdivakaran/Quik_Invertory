@@ -14,12 +14,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-    <!-- Select2 -->
-    <link rel="stylesheet" href="plugins/select2/css/select2.min.css">
-    <link rel="stylesheet" href="plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="dist/css/adminlte.min.css">
-
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -93,7 +89,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="Store List.html" class="nav-link ">
+                            <a href="Store.html" class="nav-link ">
                                 <i class="nav-icon fas fa-life-ring"></i>
                                 <p>
                                     Store
@@ -145,13 +141,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Sale</h1>
+                            <h1 class="m-0">Create Product</h1>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item active">Sale</li>
+                                <li class="breadcrumb-item active">Create Product</li>
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -164,147 +160,105 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
             <!-- Main content -->
             <div class="content">
-                <div class="card card-info">
+
+                <div class="card card-success">
+
                     <div class="card-header">
-                        <h3 class="card-title">Add Sale</h3>
+                        <h3 class="card-title"> </h3>
                     </div>
                     <!-- /.card-header -->
                     <!-- form start -->
                     <form class="form-horizontal">
                         <div class="card-body">
-
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Invoice No</label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Product Code</label>
                                 <div class="col-sm-6">
                                     <input type="text" class="form-control" id="inputEmail3" placeholder="Customer Code" value="(store code)-C100" readonly>
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Customer Name</label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Name</label>
                                 <div class="col-sm-6">
-                                    <select class="form-control select2" style="width: 100%;">
-                                        <option selected="selected">-- Select Customer Name --</option>
-                                        <option>Alaska</option>
-                                        <option>California</option>
-                                        <option>Delaware</option>
-                                        <option>Tennessee</option>
-                                        <option>Texas</option>
-                                        <option>Washington</option>
-                                      </select>
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Name">
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label for="inputEmail3" class="col-sm-2 col-form-label">Product Name</label>
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Sub Category</label>
                                 <div class="col-sm-6">
-                                    <select class="form-control select2" style="width: 100%;">
-                                        <option selected="selected">-- Select Product Name --</option>
-                                        <option>Alaska</option>
-                                        <option>California</option>
-                                        <option>Delaware</option>
-                                        <option>Tennessee</option>
-                                        <option>Texas</option>
-                                        <option>Washington</option>
+                                    <select class="custom-select">
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                        <option>option 5</option>
                                       </select>
+
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <table class="table table-responsive table-head-fixed text-nowrap table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th style="width: 5%;">Sl No</th>
-                                            <th style="width: 10%;">Part No</th>
-                                            <th style="width: 35%;">Product Name</th>
-                                            <th style="width: 10%;">Quantity</th>
-                                            <th style="width: 10%;">Rate</th>
-                                            <th style="width: 10%;">Sub Total</th>
-                                            <th style="width: 1%;"></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>1002</td>
-                                            <td>Jim Doe</td>
-                                            <td><input type="number" class="form-control" id="inputEmail3" placeholder="1" min="1"></td>
-                                            <td><input type="number" class="form-control" id="inputEmail3" placeholder="100" min="0"></td>
-                                            <td>1000</td>
-                                            <td class="project-actions text-right">
-                                                <a class="btn btn-danger btn-sm" href="#">
-                                                    <i class="fas fa-trash">
-                                                    </i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>1002</td>
-                                            <td>Products ada</td>
-                                            <td><input type="number" class="form-control" id="inputEmail3" placeholder="1" min="1"></td>
-                                            <td><input type="number" class="form-control" id="inputEmail3" placeholder="100" min="0"></td>
-                                            <td>8990</td>
-                                            <td class="project-actions text-right">
-                                                <a class="btn btn-danger btn-sm" href="#">
-                                                    <i class="fas fa-trash">
-                                                    </i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>1002</td>
-                                            <td> Product 2</td>
-                                            <td><input type="number" class="form-control" id="inputEmail3" placeholder="1" min="1"></td>
-                                            <td><input type="number" class="form-control" id="inputEmail3" placeholder="100" min="0"></td>
-                                            <td>8500</td>
-                                            <td class="project-actions text-right">
-                                                <a class="btn btn-danger btn-sm" href="#">
-                                                    <i class="fas fa-trash">
-                                                    </i>
-                                                </a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>1002</td>
-                                            <td>Products</td>
-                                            <td><input type="number" class="form-control" id="inputEmail3" placeholder="1" min="1"></td>
-                                            <td><input type="number" class="form-control" id="inputEmail3" placeholder="100" min="0"></td>
-                                            <td>4000</td>
-                                            <td class="project-actions text-right">
-                                                <a class="btn btn-danger btn-sm" href="#">
-                                                    <i class="fas fa-trash">
-                                                    </i>
-                                                </a>
-                                            </td>
-
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <hr>
-                            <div class="form-group row">
-                                <div class="col-6">
+                                <label for="inputPassword3" class="col-sm-2 col-form-label">Description</label>
+                                <div class="col-sm-6">
+                                    <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
                                 </div>
-                                <div class="col-6">
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <tbody>
-                                                <tr>
-                                                    <th style="width:50%">Subtotal:</th>
-                                                    <td>250.30</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Tax (18%)</th>
-                                                    <td>10.34</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Total:</th>
-                                                    <td>265.24</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                            </div>
+                            <div class="form-group row">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">Unit Rate </label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Unit Rate ">
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="offset-sm-1 col-sm-5">
+                                    <!-- text input -->
+
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">PO #</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="PO #">
+                                        </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">PO Month</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="Address 2">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">e No. of Cont</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="e No. of Cont">
+                                        </div>
+                                    </div>
+
+                                    <div class="offset-sm-2 col-sm-10">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="exampleCheck2">
+                                            <label class="form-check-label" for="exampleCheck2">Active</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-5">
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">Part #</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="Part #">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">HSN</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="HSN">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-sm-2 col-form-label">ALC</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputPassword3" placeholder="City">
+                                        </div>
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -312,12 +266,14 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <div class="card-footer">
                             <div class="offset-sm-5 col-sm-6">
                                 <button type="submit" class="btn btn-default ">Cancel</button>
-                                <button type="submit" class="btn btn-success  ">Save</button>
+                                <button type="submit" class="btn btn-primary ">Create</button>
                             </div>
                         </div>
                         <!-- /.card-footer -->
                     </form>
                 </div>
+
+
             </div>
             <!-- /.content -->
         </div>
@@ -353,15 +309,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="dist/js/adminlte.min.js"></script>
-    <!-- Select2 -->
-    <script src="plugins/select2/js/select2.full.min.js"></script>
-    <script>
-        $(function() {
-            //Initialize Select2 Elements
-            $('.select2').select2()
-        })
-    </script>
-
 </body>
 
 </html>
