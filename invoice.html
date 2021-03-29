@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Invoice</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css">
+    <style>
+        .tableClass {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        .tableClass td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        
+        .table-responsive {
+            font-size: 15px;
+        }
+        /* QR Code */
+    </style>
+</head>
+
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="../../index3.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item d-none d-sm-inline-block">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <!-- Navbar Search -->
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
+                        <i class="fas fa-search"></i>
+                    </a>
+                    <div class="navbar-search-block">
+                        <form class="form-inline">
+                            <div class="input-group input-group-sm">
+                                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" type="submit">
+                  <i class="fas fa-search"></i>
+                </button>
+                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
+                  <i class="fas fa-times"></i>
+                </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+
+                <!-- Messages Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-comments"></i>
+                        <span class="badge badge-danger navbar-badge">3</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <a href="#" class="dropdown-item">
+                            <!-- Message Start -->
+                            <div class="media">
+                                <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        Brad Diesel
+                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">Call me whenever you can...</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                </div>
+                            </div>
+                            <!-- Message End -->
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <!-- Message Start -->
+                            <div class="media">
+                                <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        John Pierce
+                                        <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">I got your message bro</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                </div>
+                            </div>
+                            <!-- Message End -->
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <!-- Message Start -->
+                            <div class="media">
+                                <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+                                <div class="media-body">
+                                    <h3 class="dropdown-item-title">
+                                        Nora Silvester
+                                        <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                                    </h3>
+                                    <p class="text-sm">The subject goes here</p>
+                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+                                </div>
+                            </div>
+                            <!-- Message End -->
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+                    </div>
+                </li>
+                <!-- Notifications Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        <i class="far fa-bell"></i>
+                        <span class="badge badge-warning navbar-badge">15</span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <span class="dropdown-item dropdown-header">15 Notifications</span>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-envelope mr-2"></i> 4 new messages
+                            <span class="float-right text-muted text-sm">3 mins</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-users mr-2"></i> 8 friend requests
+                            <span class="float-right text-muted text-sm">12 hours</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item">
+                            <i class="fas fa-file mr-2"></i> 3 new reports
+                            <span class="float-right text-muted text-sm">2 days</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
+                        <i class="fas fa-th-large"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="index3.html" class="brand-link">
+                <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">AdminLTE 3</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Alexander Pierce</a>
+                    </div>
+                </div>
+
+                <!-- SidebarSearch Form -->
+                <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+              <i class="fas fa-search fa-fw"></i>
+            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar Menu -->
+
+                <!-- /.sidebar-menu -->
+            </div>
+            <!-- /.sidebar -->
+        </aside>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>Invoice</h1>
+                        </div>
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active">Invoice</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+
+            <section class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+
+
+                            <!-- Main content -->
+                            <div class="invoice p-3 mb-3">
+                                <!-- title row -->
+                                <div class="row">
+                                    <div class="col-sm-3 invoice-col">Logo</div>
+                                    <div class="col-sm-6 invoice-col">
+                                        <div class="text-center">
+                                            <strong>INVOICE</strong><br>
+                                            <strong style="font-size: 20px;">DAEHEUNG INDIA AUTO-PARTS PRIVATE LIMITED</strong>
+                                            <br> NO 68,BEAUTY FARM, PAPPRAMBAKKAM ROAD
+                                            <br> MANNUR,TAMIL NADU, TAMIL NADU-602105
+                                            <br> <b>CIN</b>: U35991KA2017FTC108183 <b>PAN</b>: AAGCD4409H <b>GST</b>: 33AAGCD4409HIZX
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3 invoice-col">
+
+                                        <b> Original For Buyer</b><br>
+                                        <b>Invoice # : 007612</b><br>
+                                        <b>Invoice Date : 20/12/2020</b><br>
+                                    </div>
+                                    <!-- /.col -->
+
+                                </div>
+                                <!-- info row -->
+                                <div class="row invoice-info">
+                                    <div class="col-sm-8 invoice-col">
+                                        <b>Bill To</b> :-
+                                        <address>
+                    <strong>Admin, Inc.</strong><br>
+                    795 Folsom Ave, Suite 600<br>
+                    San Francisco, CA 94107<br>
+                    Phone: (804) 123-5432<br>
+                    Email: info@almasaeedstudio.com
+                  </address>
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-sm-4 invoice-col">
+                                        <b>Ship To</b> :-
+                                        <address>
+                    <strong>John Doe</strong><br>
+                    795 Folsom Ave, Suite 600<br>
+                    San Francisco, CA 94107<br>
+                    Phone: (555) 539-1037<br>
+                    Email: john.doe@example.com
+                  </address>
+                                    </div>
+                                    <!-- /.col -->
+
+                                    <!-- /.col -->
+                                </div>
+                                <!-- /.row -->
+
+                                <!-- Table row -->
+                                <div class="row">
+                                    <div class="col-12 table-responsive">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>Sl #</th>
+                                                    <th>Shop Code</th>
+                                                    <th>PO #</th>
+                                                    <th>PO Month</th>
+                                                    <th>Part #</th>
+                                                    <th>Part Name</th>
+                                                    <th>HSN</th>
+                                                    <th>ALC</th>
+                                                    <th>Qty</th>
+                                                    <th>UoM</th>
+                                                    <th>Unit Rate</th>
+                                                    <th>Ass Value</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>10000</td>
+                                                    <td>455-981-221</td>
+                                                    <td>MAR</td>
+                                                    <td>455-981-221</td>
+                                                    <td>El snort testosterone trophy driving gloves handsome</td>
+                                                    <td>6884.50</td>
+                                                    <td>P12344</td>
+                                                    <td>100</td>
+                                                    <td>Nos</td>
+                                                    <td>200.00</td>
+                                                    <td>500000.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>2</td>
+                                                    <td>50000</td>
+                                                    <td>455-981-221</td>
+                                                    <td>MAR</td>
+                                                    <td>455-981-221</td>
+                                                    <td>Edriving gloves handsome</td>
+                                                    <td>6884.50</td>
+                                                    <td>P12344</td>
+                                                    <td>100</td>
+                                                    <td>Nos</td>
+                                                    <td>200.00</td>
+                                                    <td>500000.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>3</td>
+                                                    <td>6000</td>
+                                                    <td>455-981-221</td>
+                                                    <td>MAR</td>
+                                                    <td>455-981-221</td>
+                                                    <td>driving gloves handsome El snort testosterone trophy </td>
+                                                    <td>6884.50</td>
+                                                    <td>P12344</td>
+                                                    <td>100</td>
+                                                    <td>Nos</td>
+                                                    <td>200.00</td>
+                                                    <td>500000.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>4</td>
+                                                    <td>810000</td>
+                                                    <td>455981221</td>
+                                                    <td>JAN</td>
+                                                    <td>455981-221</td>
+                                                    <td>El snort testostero</td>
+                                                    <td>6884.50</td>
+                                                    <td>P12344</td>
+                                                    <td>100</td>
+                                                    <td>Nos</td>
+                                                    <td>200.00</td>
+                                                    <td>500000.00</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><b>TOTAL</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><b>280</b></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td><b>68552284.50</b></td>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+                                <!-- /.row -->
+
+                                <div class="row">
+                                    <!-- accepted payments column -->
+                                    <div class="col-6">
+                                        <div class="table-responsive">
+
+                                            <table class="tableClass">
+                                                <tr>
+                                                    <th style="width:50%">Vehicle No :</th>
+                                                    <td>KL34E2090</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Transporter Name :</th>
+                                                    <td>ANOOB K D</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>No of Package / weight :</th>
+                                                    <td>5.80</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Mode of Transport :</th>
+                                                    <td>By Road</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>e-Way Bill No :</th>
+                                                    <td>1034</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Date Of Preparation :</th>
+                                                    <td>18/02/2020</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Date Of Supply :</th>
+                                                    <td>18/02/2020</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>e-Way Bill Value :</th>
+                                                    <td>2666665.24</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-6">
+
+
+                                        <div class="table-responsive">
+                                            <table class="tableClass">
+                                                <tr>
+                                                    <th style="width:50%">Total Assessable Value:</th>
+                                                    <td>250.30</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>CGST:</th>
+                                                    <td>10.34</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>SGST:</th>
+                                                    <td>5.80</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>IGST:</th>
+                                                    <td>265.24</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>CESS:</th>
+                                                    <td>10.34</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>TCS:</th>
+                                                    <td>0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>TAX Amount:</th>
+                                                    <td>265.24</td>
+                                                </tr>
+                                                <tr>
+                                                    <th>Invoice Total:</th>
+                                                    <td>2555565.24</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+
+
+                                    <!-- /.col -->
+                                </div>
+                                <!-- /.row -->
+                                <div class="row">
+                                    <!-- accepted payments column -->
+                                    <div class="col-3">
+                                        <canvas id="qr-code" style="margin-top: 10px;"></canvas>
+                                    </div>
+                                    <div class="col-9">
+                                        <p><b>Amount in words :- </b>One Lakh Nineteen Thousand Five Hundred and Thirteen Rupees Fifty Seven Paisa Only</p>
+                                        <p>
+                                            I/we hereby certify that our registration certificate under the is in force on the date on which the sale of the goods specified in this Bill/cash memorandum is made by me/us and that transsaction of sales covered by this bill/cash memorandum has been
+                                            effected by me/us in the regular course of my/our business. E. & O. E.
+                                        </p>
+                                        <div class="row invoice-info">
+                                            <div class="col-sm-4 invoice-col">
+                                                <address>
+                        <strong>Admin, Inc.</strong><br>
+                     
+                        Phone: (804) 123-5432<br>
+                        Email: info@almasaeedstudio.com
+                      </address>
+                                            </div>
+                                            <div class="col-sm-8 invoice-col">
+                                                <p><b>For DAEHEUNG INDIA AUTO-PARTS PRIVATE LIMITED</b></p>
+                                                <p><img src="http://wyedental.co.uk/wp-content/uploads/2015/05/signature.png" height="50" width="100" alt="Sd"></p>
+                                                <p><b>Authorised Signatory</b></p>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- this row will not appear when printing -->
+                                <div class="row no-print">
+                                    <div class="col-12">
+                                        <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                                        <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
+                    Payment
+                  </button>
+                                        <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                    <i class="fas fa-download"></i> Generate PDF
+                  </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.invoice -->
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </section>
+            <!-- /.content -->
+        </div>
+        <!-- /.content-wrapper -->
+        <footer class="main-footer no-print">
+            <div class="float-right d-none d-sm-block">
+                <b>Version</b> 3.1.0
+            </div>
+            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+        </footer>
+
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="dist/js/demo.js"></script>
+
+    <!-- QR Code -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+    <script>
+        var qr;
+        (function() {
+            qr = new QRious({
+                element: document.getElementById('qr-code'),
+                size: 200,
+                value: 'Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra'
+            });
+        })();
+
+        function generateQRCode() {
+            var qrtext = " Etsy doostang zoodles disqus groupon greplin oooj voxy zoodles, weebly ning heekya handango imeem plugg dopplr jibjab, movity jajah plickers sifteo edmodo ifttt zimbra";
+            qr.set({
+                foreground: 'black',
+                size: 200,
+                value: qrtext
+            });
+        }
+    </script>
+</body>
+
+</html>
